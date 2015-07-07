@@ -1,4 +1,5 @@
 FROM million12/centos-supervisor 
+MAINTAINER Rodrigo Cosme <rdccosmo@gmail.com>
 RUN yum install -y \
     php \
     php-fpm \
