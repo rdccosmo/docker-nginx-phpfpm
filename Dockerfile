@@ -22,6 +22,9 @@ COPY php-fpm/php-fpm.conf /etc/php-fpm.conf
 COPY php-fpm/php-fpm.d /etc/php-fpm.d
 ADD supervisord/nginx-service.conf /etc/supervisor.d/nginx-service.conf
 ADD supervisord/php-fpm-service.conf /etc/supervisor.d/php-fpm-service.conf
+ADD supervisord/php.sh /php.sh
+RUN chmod +x /php.sh
+ADD supervisord/php-service.conf /etc/supervisor.d/php-service.conf
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log 
